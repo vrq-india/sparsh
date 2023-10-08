@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparsh Srivastava</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .resume-section {
+            background-color: white;
+            padding: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span id="sparsh-header">
+            <img src="sparsh.jpeg" alt="Sparsh Srivastava" style="width: 100px;
+            height: auto;
+            border: 1px solid;
+            border-radius: 75% 50% 75% 50%;
+            margin-right: 5px">
+            <a class="navbar-brand" href="#">Sparsh Srivastava</a>
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div><button id="savePdfButton" class="btn btn-primary" style="float: right;">Save as PDF</button></div>
+        <div id="resume-container">
+            <section id="about" class="resume-section">
+                <h2>About Me</h2>
+                <p>I want to assist a stable and thriving company in achieving its
+                    mission and goals by being able to continuously learn and
+                    improve the
+                    necessary skills and knowledge needed to help push both the
+                    company and myself forward into success.
+                    </p>
+            </section>
+
+            <section id="experience" class="resume-section">
+                <h2>Experience - 2+ years</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        C#| VB.NET| ASP.NET MVC|ANDROID | JETPACK |
+                        POSTMAN | C | JQuery | JIRA | GIT | GITHUB | Kotlin
+                        IDE: VISUAL STUDIO| ECLIPSE EE | ANDROID STUDIO |
+                        DATABASE: SSMS | |FIREBASE | ROOM DB | JDBC 
+                    </div>
+                    <div class="col-md-8">
+                        Software Engineer at Qualitest Infotech Pvt Ltd for
+1 year 8 months (Dec 2021 - Present )
+PROJECT : Pennfoster - Learning Partner Portal (.NET web
+app)
+TECHSTACK: C#,VB.NET, Entity framework, Linq.
+RESPONSIBILITIES :
+PROJECT : KICKBOARD (ANDROID MOBILE APP)
+TECHSTACK: MVVM ARCHITEC
+TURE , RETROFIT , REST SERVICES , LIVE DATA .
+LANGUAGES USED : JAVA, KOTLIN.
+RESPONSIBILITIES :
+Associate Software Engineer at Xoriant Solutions Pvt Ltd.
+for 4 months ( June 2021-Nov 2021)
+WORKED ON JAVA SE , JDBC , MAVEN , GIT
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="resume-section">
+                <h2>Education</h2>
+                <div class="row">
+                    <div class="col-md-12">B.TECH FROM ABESIT AFFILIATED TO AKTU (2017-
+                        2021) WITH 74.5%
+                        10+2 FROM CBSE IN 2017 WITH 75.4%.
+                        10TH FROM CBSE IN 2015 WITH 8.8 CGPA.</div>
+                </div>
+            </section>
+
+            <section id="contact" class="resume-section">
+                <h2>Contact Me</h2>
+                <p>Email: sparsh.1278@gmail.com</p>
+                <p>Phone: (+91) 9953618651</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/sparsh-srivastava0531001a0/" target="_blank">https://www.linkedin.com/in/sparsh-srivastava0531001a0/</a></p>
+                <p>GitHub: <a href="https://github.com/Starscream19" target="_blank"></a></p>
+            </section>
+            <section id="strengths" class="resume-section">
+                <h2>Strengths</h2>
+                <p>QUICK LEARNER
+                    COMMUNICATION SKILLS
+                    CONFLICT RESOLUTION
+                    TEAM PLAYER
+                    </p>
+                    <div class="experience">
+                        <div class="experience-item" data-title="HTML/CSS" data-level="90"></div>
+                        <div class="experience-item" data-title="JavaScript" data-level="80"></div>
+                        <!-- Add more experience items as needed -->
+                    </div>
+            </section>
+            <section id="declaration" class="resume-section">
+                <h2>Declaration</h2>
+                <p>I, Sparsh Srivastava hereby declare that the information
+                    contained here is true to my knowledge and belief.
+                    </p>
+                
+                
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+    <script>
+        const htmlCssProgress = document.querySelector('.experience-item[data-title="HTML/CSS"]');
+updateProgressBar(htmlCssProgress, 90); // Update the HTML/CSS progress bar to 90%
+
+        // Function to generate and save the PDF
+        function saveAsPdf() {
+            const element = document.getElementById("resume-container");
+            const pdfOptions = {
+                margin: 10,
+                filename: 'your_resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+    
+            html2pdf().from(element).set(pdfOptions).save();
+        }
+    
+        // Attach the click event to the "Save as PDF" button
+        document.getElementById("savePdfButton").addEventListener("click", saveAsPdf);
+    </script>
+
+    <!-- Add Bootstrap JS and Popper.js CDN links here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
